@@ -1,7 +1,7 @@
 # Crystal orientation fabric anisotropy causes directional hardening of the Northeast Greenland Ice Stream
 ## Specfab COF evolution along EGRIP flow line
 
-These scripts were used to infer horizontal anisotropy from airborne radar crosspoints in the Northeast Greenland Ice Stream (NEGIS) which are published 
+These scripts were used to simulate the COF evolution along a flowline starting at EGRIP in the Northeast Greenland Ice Stream (NEGIS) which are published 
 in Gerber et al., (2023), Crystal orientation fabric anisotropy causes directional hardening of the Northeast Greenland Ice Stream, Nature Communications
 
 ## Script overview
@@ -14,9 +14,10 @@ in Gerber et al., (2023), Crystal orientation fabric anisotropy causes direction
 
 2) Iteratetively update fabric tensor along flow line.
 
-EGRIP_fabricEvolution.py, using nlm_EGRIP_n.csv from NEGIS_fabric_aicorr.py/example_plot
+`EGRIP_fabricEvolution.py`
+- read the strain and spin tensor data from **strainrate_spin.csv**
+- initialize the fabric at EGRIP by loading **nlm_EGRIP_n.csv**
+- calculate COF evolution with `sf.dndt_LATROT(nlm_prev, D, W) and update fabric from previous step
+- save output in **eigenvalues_downstream.csv** and COF plots in **images/fabric_stepXXXX.png**
 
-output --> eigenvalues_downstream.csv
-images/fabric_stepXXXX.png
-png2gif.py --> EGRIP_fabricEvolution.gif
 plot Eigenvalues and cumulative strain along flowline with Eigenvalues2D.m 
