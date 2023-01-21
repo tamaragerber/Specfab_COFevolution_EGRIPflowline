@@ -1,7 +1,7 @@
 clear all
 close all
 
-fl = shaperead('/home/tamara/Documents/university_copenhagen/PhD_project/Manuscript_NEGIS_fabric/figures/alle_Profile_csv/alle_Profile_csv/D_csv_8/downstream_flowline_rawdata.shp');
+fl = shaperead('downstream_flowline_rawdata.shp');
 
 X = extractfield(fl,'X');
 Y = extractfield(fl,'Y');
