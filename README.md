@@ -19,5 +19,3 @@ in Gerber et al., (2023), Crystal orientation fabric anisotropy causes direction
 - initialize the fabric at EGRIP by loading **nlm_EGRIP_n.csv**
 - calculate COF evolution with `sf.dndt_LATROT(nlm_prev, D, W) and update fabric from previous step
 - save output in **eigenvalues_downstream.csv** and COF plots in **images/fabric_stepXXXX.png**
-
-plot Eigenvalues and cumulative strain along flowline with Eigenvalues2D.m 
